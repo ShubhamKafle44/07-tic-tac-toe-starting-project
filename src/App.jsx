@@ -15,7 +15,7 @@ function App() {
   const activePlayer = deriveActivePlayer(gameTurns)
   function handleSelectSquare(rowIndex, colIndex) {
     setGameTurns(prevTurns => {
-      const currentPlayer = deriveActivePlayer(gameTurns)
+      const currentPlayer = deriveActivePlayer(prevTurns)
       const updatedTurns = [{ square: { row: rowIndex, col: colIndex }, player: currentPlayer }, ...prevTurns]
       return updatedTurns
     })
